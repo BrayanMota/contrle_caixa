@@ -7,7 +7,7 @@ class CustomInput extends StatelessWidget {
   final String inputType; // Para determinar qual tipo de input
   final List<String>? selectOptions; // Para as opções do dropdown
 
-  CustomInput({
+  const CustomInput({
     super.key,
     required this.label,
     required this.subLabel,

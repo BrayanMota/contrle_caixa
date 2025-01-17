@@ -1,7 +1,6 @@
 import 'package:controle_caixa/routes.dart';
 import 'package:controle_caixa/utils/custom_theme.dart';
 import 'package:flutter/material.dart';
-import 'pages/home.dart';
 
 void main() {
   runApp(const MyApp());

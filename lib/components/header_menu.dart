@@ -1,5 +1,4 @@
 import 'package:controle_caixa/routes.dart';
-import 'package:controle_caixa/utils/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class HeaderMenu extends StatelessWidget {
