@@ -1,32 +1,62 @@
 import 'package:controle_caixa/pages/base.dart';
+import 'package:controle_caixa/routes.dart';
 import 'package:flutter/material.dart';
 
 class EntrieListPage extends StatelessWidget {
-  const EntrieListPage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BaseLayout(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Lista de Entradas'),
-        ),
+        appBar: AppBar(),
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 200),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Entrada
-              const Text(
-                'Entrada',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Entrada
+                      Text(
+                        'Entrada',
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        'Acompanhe as entradas registradas no sistema.',
+                        style: TextStyle(fontSize: 14, color: Colors.grey),
+                      ),
+                      SizedBox(height: 16),
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 850,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(
+                        RoutePaths.createCompany1,
+                      );
+                    },
+                    child: const Text('Cadastrar Empresa'),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(
+                        RoutePaths.createServiceProvider1,
+                      );
+                    },
+                    child: const Text('Cadastrar Serviço'),
+                  ),
+                ],
               ),
-              const SizedBox(height: 4),
-              const Text(
-                'Acompanhe as entradas registradas no sistema.',
-                style: TextStyle(fontSize: 14, color: Colors.grey),
-              ),
-              const SizedBox(height: 16),
 
               // Filtros e Ordenação
               Row(
@@ -104,8 +134,7 @@ class EntrieListPage extends StatelessWidget {
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: DataTable(
-                    columnSpacing: 16,
-                    headingRowHeight: 48,
+                    columnSpacing: 200,
                     columns: [
                       DataColumn(
                         label: Row(
@@ -133,7 +162,7 @@ class EntrieListPage extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Empresa XYZ'),
+                              Text('Empresa BBS'),
                               Text(
                                 'email@empresa.com',
                                 style:

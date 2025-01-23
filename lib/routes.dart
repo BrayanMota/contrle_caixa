@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+
 import 'package:controle_caixa/apps/entrie/pages/list_entries.dart';
 import 'package:controle_caixa/apps/exit/pages/create_exit.dart';
 import 'package:controle_caixa/apps/exit/pages/list_exits.dart';
-import 'package:flutter/material.dart';
-
 import 'package:controle_caixa/pages/home.dart';
 import 'package:controle_caixa/apps/entrie/pages/create_company1.dart';
 import 'package:controle_caixa/apps/entrie/pages/create_company2.dart';
@@ -24,7 +24,7 @@ class RoutePaths {
       home: (context) => const HomePage(),
       listExits: (context) => const ExitListPage(),
       createExit: (context) => const ExitCreatePage(),
-      listEntries: (context) => const EntrieListPage(),
+      listEntries: (context) => EntrieListPage(),
       createCompany1: (context) => const CompanyCreatePage1(),
       createCompany2: (context) => const CompanyCreatePage2(),
       createServiceProvider1: (context) => const ServiceProviderCreatePage1(),

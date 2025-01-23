@@ -11,9 +11,7 @@ class CompanyCreatePage1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseLayout(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Voltar'),
-        ),
+        appBar: AppBar(),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 200.0),

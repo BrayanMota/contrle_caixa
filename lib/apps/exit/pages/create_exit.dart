@@ -11,9 +11,7 @@ class ExitCreatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BaseLayout(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Voltar'),
-        ),
+        appBar: AppBar(),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 200.0),
@@ -22,7 +20,7 @@ class ExitCreatePage extends StatelessWidget {
               children: [
                 // Título principal
                 const Text(
-                  'Cadastro de uma nova despesa',
+                  'Saída Financeira',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -32,7 +30,7 @@ class ExitCreatePage extends StatelessWidget {
 
                 // Texto de apoio (pequeno)
                 const Text(
-                  'Informações essenciais para registrar uma nova despesa no sistema',
+                  'Informações essenciais para informar o tipo de saída financeira da empresa',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.grey,
@@ -50,22 +48,12 @@ class ExitCreatePage extends StatelessWidget {
                       },
                       child: const Chip(
                         label: Text(
-                          '1. Informações da Empresa/Cliente',
+                          '1. Informações de Saída/Financeira',
                           style: TextStyle(
                             color: Colors.white,
                           ),
                         ),
                         backgroundColor: CustomColors.secondaryColor,
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    // Item 2: Informações de Pagamento
-                    GestureDetector(
-                      onTap: () {
-                        // Ação para navegar para a página de informações de pagamento
-                      },
-                      child: const Chip(
-                        label: Text('2. Informações de Pagamento'),
                       ),
                     ),
                   ],
@@ -90,7 +78,7 @@ class ExitCreatePage extends StatelessWidget {
                             width: double.infinity,
                             child: const Center(
                               child: Text(
-                                'Informações Básicas da Empresa',
+                                'Informações de Pagamento',
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -100,104 +88,30 @@ class ExitCreatePage extends StatelessWidget {
                           ),
                           const SizedBox(height: 10),
                           // Inputs
-                          Column(
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // Linha com inputs
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  // Nome da Empresa/Cliente
-                                  CustomInput(
-                                    label: 'Nome da Empresa/Cliente *',
-                                    subLabel:
-                                        'Campo para identificar a empresa no sistema.',
-                                    placeHolder: 'Empresa BBS',
-                                  ),
-                                  const SizedBox(width: 16),
-                                  // Nome Fantasia
-                                  CustomInput(
-                                    label: 'Nome Fantasia',
-                                    subLabel:
-                                        'Nome comercial da empresa, se aplicável.',
-                                    placeHolder: 'Empresa BBS',
-                                  ),
-                                ],
+                              CustomInput(
+                                label: 'Tipo de Saída *',
+                                subLabel: 'Informe o tipo de saída.',
+                                placeHolder: 'Conta de Luz',
                               ),
-                              const SizedBox(height: 16),
-                              // Linha com inputs
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  // CPF/CNPJ
-                                  CustomInput(
-                                    label: 'CFP/CNPJ da Empresa ou Cliente *',
-                                    subLabel:
-                                        'Número de identificação jurídica da empresa.',
-                                    placeHolder: '07.007.165/0028-54',
-                                  ),
-                                  const SizedBox(width: 16),
-                                  // Responsável
-                                  CustomInput(
-                                    label: 'Responsável da Empresa',
-                                    subLabel: 'Nome do responsável da empresa.',
-                                    placeHolder: 'Empresa BBS',
-                                  ),
-                                ],
+                              SizedBox(width: 16),
+                              CustomInput(
+                                label: 'Data *',
+                                subLabel: 'Informe a Data de Saída.',
+                                placeHolder: '16/01/2025',
+                                inputType: 'date',
+                              ),
+                              SizedBox(width: 16),
+                              CustomInput(
+                                label: 'Valor de Pagamento *',
+                                subLabel: 'Informe o Valor Pago.',
+                                placeHolder: 'R\$ 100,00',
                               ),
                             ],
                           ),
-
-                          // Contato
-                          Container(
-                            padding: const EdgeInsets.all(16.0),
-                            width: double.infinity,
-                            child: const Center(
-                              child: Text(
-                                'Contato',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          // Inputs
-                          Column(
-                            children: [
-                              // Linha com inputs
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  // Nome da Empresa/Cliente
-                                  CustomInput(
-                                    label: 'E-mail *',
-                                    subLabel: 'Digite o e-mail da empresa.',
-                                    placeHolder: 'empresabbs@gmail.com',
-                                  ),
-                                  const SizedBox(width: 16),
-                                  // Nome Fantasia
-                                  CustomInput(
-                                    label: 'Telefone Comercial *',
-                                    subLabel:
-                                        'Telefone fixo ou celular da empresa.',
-                                    placeHolder: '99999-999',
-                                  ),
-                                  const SizedBox(width: 16),
-                                  CustomInput(
-                                    label: 'Telefone Comercial 2',
-                                    subLabel:
-                                        'Telefone fixo ou celular da empresa.',
-                                    placeHolder: '99999-999',
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 16),
-                            ],
-                          ),
+                          const SizedBox(height: 16),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -209,14 +123,14 @@ class ExitCreatePage extends StatelessWidget {
                               ElevatedButton(
                                 onPressed: () {
                                   Navigator.of(context).pushNamed(
-                                    RoutePaths.createCompany2,
+                                    RoutePaths.listExits,
                                   );
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: CustomColors.secondaryColor,
                                 ),
                                 child: const Text(
-                                  'Continuar',
+                                  'Concluir',
                                   style: TextStyle(
                                     color: Colors.white,
                                   ),
