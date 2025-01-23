@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CompanyListPage extends StatelessWidget {
-  const CompanyListPage({super.key});
+class ExitListPage extends StatelessWidget {
+  const ExitListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lista de Empresas/Entradas'),
+        title: const Text('Lista de Saídas'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -21,7 +21,7 @@ class CompanyListPage extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             const Text(
-              'Acompanhe as entradas registradas no sistema.',
+              'Acompanhe as saídas registradas no sistema.',
               style: TextStyle(fontSize: 14, color: Colors.grey),
             ),
             const SizedBox(height: 16),
@@ -134,7 +134,8 @@ class CompanyListPage extends StatelessWidget {
                             Text('Empresa XYZ'),
                             Text(
                               'email@empresa.com',
-                              style: TextStyle(fontSize: 12, color: Colors.grey),
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.grey),
                             ),
                           ],
                         ),

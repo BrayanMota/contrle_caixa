@@ -254,7 +254,7 @@ class ServiceProviderCreatePage2 extends StatelessWidget {
                                   ElevatedButton(
                                     onPressed: () {
                                       Navigator.of(context).pushNamed(
-                                        RoutePaths.listCompanies,
+                                        RoutePaths.listEntries,
                                       );
                                     },
                                     style: ElevatedButton.styleFrom(

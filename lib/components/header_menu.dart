@@ -1,4 +1,3 @@
-import 'package:controle_caixa/routes.dart';
 import 'package:flutter/material.dart';
 
 class HeaderMenu extends StatelessWidget {
@@ -74,30 +73,6 @@ class HeaderMenu extends StatelessWidget {
                 thickness: 1,
                 indent: 20,
                 endIndent: 1,
-              ),
-              // Botões
-              Row(
-                children: [
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(
-                        RoutePaths.createServiceProvider1,
-                      );
-                    },
-                    icon: const Icon(Icons.person),
-                    label: const Text('Nova Prestação de Serviço'),
-                  ),
-                  const SizedBox(width: 8),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      Navigator.of(context).pushNamed(
-                        RoutePaths.createCompany1,
-                      );
-                    },
-                    icon: const Icon(Icons.apartment),
-                    label: const Text('Nova Empresa'),
-                  ),
-                ],
               ),
               const SizedBox(width: 8),
               const VerticalDivider(
